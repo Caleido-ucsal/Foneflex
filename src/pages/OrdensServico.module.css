@@ -1,0 +1,13 @@
+.filtros { padding: 14px 16px; margin-bottom: 16px; display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+.filtros input { width: 240px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 7px 10px; font-size: 12px; }
+.table { overflow: auto; }
+th { text-align: left; font-size: 11px; color: var(--navy-700); font-weight: 500; text-transform: uppercase; padding: 12px 16px; background: var(--surface-muted); white-space: nowrap; }
+td { padding: 11px 16px; font-size: 13px; border-top: 1px solid #f1f5f9; }
+.right { text-align: right; }
+.subtle { color: var(--text-subtle); }
+.fone { display: block; color: var(--text-subtle); font-size: 10px; margin-top: 2px; }
+.ativo { color: var(--blue-600); font-weight: 600; }
+.neutro { color: var(--navy-700); font-weight: 600; }
+.apagado { color: var(--text-subtle); font-weight: 500; }
+td select { border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 6px 8px; background: #fff; font-size: 12px; }
+.empty { text-align: center; color: var(--text-muted); padding: 32px; }
