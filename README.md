@@ -2,8 +2,10 @@
 
 Front-end do sistema de gestão da **FoneFlex** (projeto de faculdade): loja de telefonia móvel com venda de aparelhos, conserto e (futuramente) aluguel de celulares.
 
-Stack: React + Vite + TypeScript + React Router.
+Stack: React + Vite + TypeScript + React Router + React-Bootstrap (tema Bootstrap customizado via Sass).
 Design: https://www.figma.com/design/ceb6rh6IknNUddfzan2jmx/FoneFlex--Copy- (referências em `docs/figma/`)
+
+Redesign visual (antes × depois): [`docs/redesign-visual/`](docs/redesign-visual/README.md)
 
 ## Contexto (Documento 4.4)
 Operação 100% em papel, equipe de 6 pessoas. Dores: perda de dados de clientes, falta de rastreio de ordens de serviço/orçamentos, sem controle de cobranças.
@@ -35,11 +37,14 @@ npm run dev
 | `/ordens-de-servico` | Ordens de Serviço, filtros, troca de status, Nova OS (4 passos) |
 | `/vendas` | Vendas de Balcão (carrinho, estoque, recibo) |
 | `/locacoes` | Locação de Aparelhos (novo aluguel em 3 passos, caução, devolução) |
-| `/clientes` | Base de Clientes (cadastro, histórico) |
+| `/clientes` | Clientes (cadastro, histórico) |
+| `/aparelhos` | Catálogo de aparelhos para aluguel (filtros, favoritos, alugar) |
+| `/caixa` | Caixa (entradas de vendas e diárias, caução em custódia) |
 
 ## Arquitetura
 - `src/services/`: camada de dados. Hoje usa `localStorage` com dados iniciais (`mock.ts`); para integrar o back-end, troque as funções de cada serviço mantendo as assinaturas.
-- `src/components/ui`: componentes base. `src/components/layout`: sidebar, topbar, busca global.
+- `src/styles/theme.scss`: tema Bootstrap. Sobrescreve as variáveis do framework com a paleta da marca (`_brand.scss`) e a fonte Inter; `_shell.scss` e `_components.scss` trazem os estilos próprios.
+- `src/components/ui`: peças sobre o React-Bootstrap (badges de status, paginação, estados de carregamento/vazio, toasts, stepper). `src/components/layout`: sidebar (offcanvas no mobile), topbar, busca global, notificações.
 - `src/pages/`: uma pasta por módulo com seus modais.
 - Para recomeçar com os dados de exemplo, limpe o localStorage do navegador (chaves `foneflex:*`).
 
